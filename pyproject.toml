@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "codai-sdk"
+version = "0.2.1"
+description = "Official Python SDK for the codai AI gateway — chat, messages, responses, streaming, agents, sessions, hosts, tasks, account."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [{ name = "codai", email = "support@codai.ro" }]
+keywords = ["codai", "ai", "llm", "openai-compatible", "gateway", "agents"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Software Development :: Libraries",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pyyaml>=6.0", "pytest>=8.0"]
+
+[project.urls]
+Homepage = "https://codai.ro"
+Repository = "https://github.com/codai-ro/codai-sdk-python"
+Issues = "https://github.com/codai-ro/codai-sdk-python/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/codai"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
